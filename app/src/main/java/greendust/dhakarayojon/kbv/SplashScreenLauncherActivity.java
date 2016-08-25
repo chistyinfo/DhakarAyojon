@@ -21,7 +21,7 @@ import greendust.dhakarayojon.Tab.IconTextTabsActivity;
 
 public class SplashScreenLauncherActivity extends Activity {
 
-	static final int SPLASH_SHOW_TIME = 5000;
+	static final int SPLASH_SHOW_TIME = 6000;
 
 	public static final String SPLASH_SCREEN_OPTION = "com.example.chisty.splashscreen.SplashScreenLauncherActivity";
 	public static final String SPLASH_SCREEN_OPTION_1 = "Fade in + Ken Burns";

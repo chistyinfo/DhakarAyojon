@@ -38,7 +38,7 @@
     <greendust.dhakarayojon.font.RobotoTextView
         android:id="@+id/welcome_text"
         style="@style/TextViewAppearance.Headline1"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
@@ -46,6 +46,6 @@
         android:layout_marginTop="10dp"
         android:alpha="0.0"
         android:text="@string/welcome"
-        android:textColor="@color/link" />
+        android:textColor="@color/white" />
 
 </RelativeLayout>
