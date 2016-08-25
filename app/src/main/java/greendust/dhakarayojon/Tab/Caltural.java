@@ -72,6 +72,8 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+
+
         apiCall(retrofit);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -80,6 +82,7 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
                 apiCall(retrofit);
             }
         });
+
 
 
 
@@ -103,6 +106,8 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
 
     }
 
+
+
     private void apiCall(Retrofit retrofit) {
         MyApi myApi = retrofit.create(MyApi.class);
 
@@ -123,4 +128,6 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
     public void onFailure(Call<ItemModel> call, Throwable t) {
 
     }
+
+
 }
