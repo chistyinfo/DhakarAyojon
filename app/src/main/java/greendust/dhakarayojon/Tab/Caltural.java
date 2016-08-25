@@ -59,7 +59,7 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
-                start();
+
 
             }
         });

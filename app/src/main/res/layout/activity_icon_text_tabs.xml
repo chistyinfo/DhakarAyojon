@@ -24,7 +24,7 @@
             <!--android:layout_gravity="center">-->
         <!--<TextView-->
             <!--android:id="@+id/toolbar_title"-->
-            <!--android:text="পত্রিকাবিডি"-->
+            <!--android:text="ঢাকার আয়োজন"-->
             <!--android:textSize="24sp"-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->
