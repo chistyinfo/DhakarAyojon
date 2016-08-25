@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,17 +45,23 @@ public class IconTextTabsActivity extends AppCompatActivity {
 
 
 
+
+
 //        TextView textView = (TextView) findViewById(R.id.toolbar_title);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
-
-
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+
+        AdView nAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        nAdView.loadAd(adRequest);
+
+
+
 //        setupTabIcons();
-
-
 
 
     }
@@ -100,6 +109,8 @@ public class IconTextTabsActivity extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
     }
+
+
 
     @Override
     public void onBackPressed() {

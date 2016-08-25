@@ -1,5 +1,7 @@
 package greendust.dhakarayojon.Tab;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -33,8 +35,6 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
     Retrofit retrofit;
 
     String API = "http://www.padmafire.com/chistyinfo/dhakaayojon/";
-
-
 
     public Caltural() {
         // Required empty public constructor
@@ -72,20 +72,14 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+            apiCall(retrofit);
 
-
-        apiCall(retrofit);
-
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                apiCall(retrofit);
-            }
-        });
-
-
-
-
+            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    apiCall(retrofit);
+                }
+            });
 
 
         // Inflate the layout for this fragment
@@ -98,12 +92,15 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
 //        webView2.getSettings().setJavaScriptEnabled(true);
 //        webView2.setWebViewClient(new WebViewClient());
 
-
-
-
         return rootView;
 
 
+    }
+
+
+    public void dialNumber(String number){
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +number));
+        startActivity(intent);
     }
 
 
@@ -114,6 +111,10 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
         Call<ItemModel> call = myApi.getShout();
         call.enqueue(this);
     }
+
+
+
+
 
     @Override
     public void onResponse(Call<ItemModel> call, Response<ItemModel> response) {
@@ -126,8 +127,8 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
 
     @Override
     public void onFailure(Call<ItemModel> call, Throwable t) {
-
     }
+
 
 
 }

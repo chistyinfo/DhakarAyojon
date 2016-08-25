@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "993989176805",
+    "firebase_url": "https://dhakar-ayojon.firebaseio.com",
+    "project_id": "dhakar-ayojon",
+    "storage_bucket": "dhakar-ayojon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993989176805:android:a2514390082d7329",
+        "android_client_info": {
+          "package_name": "greendust.dhakarayojon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993989176805-0c5fdpijmk0qjt6o8kkqjlkip3uqflcp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACmauPEmv8KlNMzi9Bvw4_Byz_7SzLIMM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
