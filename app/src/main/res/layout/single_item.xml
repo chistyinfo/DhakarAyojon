@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="3"
-            android:paddingBottom="5dp"
+            android:paddingBottom="2dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="match_parent"
@@ -115,7 +115,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingBottom="5dp"
                 android:paddingLeft="@dimen/feed_item_status_pad_left_right"
                 android:paddingRight="@dimen/feed_item_status_pad_left_right"
                 android:paddingTop="@dimen/feed_item_status_pad_top" />
@@ -142,6 +141,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="true"
                 android:paddingLeft="@dimen/feed_item_status_pad_left_right"
                 android:paddingRight="@dimen/feed_item_status_pad_left_right"
                 android:paddingTop="@dimen/feed_item_status_pad_top" />
@@ -156,6 +156,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            android:layout_marginTop="5dp"
             android:scaleType="fitXY"
             android:visibility="visible" />
     </LinearLayout>

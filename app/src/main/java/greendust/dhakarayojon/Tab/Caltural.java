@@ -82,6 +82,9 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
         });
 
 
+
+
+
         // Inflate the layout for this fragment
 //        AdView mAdView = (AdView) rootView.findViewById(R.id.adView1);
 //        AdRequest adRequest = new AdRequest.Builder().build();
