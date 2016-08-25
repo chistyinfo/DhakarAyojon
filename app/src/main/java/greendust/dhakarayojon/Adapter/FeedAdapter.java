@@ -1,4 +1,4 @@
-package greendust.retrofitwithjaso.Adapter;
+package greendust.dhakarayojon.Adapter;
 
 
 import android.content.Context;
@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import greendust.retrofitwithjaso.Model.Feed;
-import greendust.retrofitwithjaso.Model.ItemModel;
-import greendust.retrofitwithjaso.R;
+import greendust.dhakarayojon.Model.Feed;
+import greendust.dhakarayojon.Model.ItemModel;
+import greendust.dhakarayojon.R;
 
 /**
  * Created by Joker on 7/24/16.

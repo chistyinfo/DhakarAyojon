@@ -1,18 +1,21 @@
-package greendust.retrofitwithjaso;
+package greendust.dhakarayojon.Tab;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import greendust.retrofitwithjaso.Adapter.FeedAdapter;
-import greendust.retrofitwithjaso.Api.MyApi;
-import greendust.retrofitwithjaso.Model.ItemModel;
+import greendust.dhakarayojon.Adapter.FeedAdapter;
+import greendust.dhakarayojon.Api.MyApi;
+import greendust.dhakarayojon.Model.ItemModel;
+import greendust.dhakarayojon.R;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -21,8 +24,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements Callback<ItemModel> {
 
+public class Caltural extends Fragment implements Callback<ItemModel> {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
@@ -31,15 +34,25 @@ public class MainActivity extends AppCompatActivity implements Callback<ItemMode
 
     String API = "http://api.androidhive.info/feed/";
 
+
+
+    public Caltural() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
 
+        View rootView = inflater.inflate(R.layout.fragment_caltural, container, false);
 
-        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
-
+        swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefresh1);
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
@@ -54,13 +67,10 @@ public class MainActivity extends AppCompatActivity implements Callback<ItemMode
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view1);
+        mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
-
-
 
         apiCall(retrofit);
 
@@ -71,6 +81,23 @@ public class MainActivity extends AppCompatActivity implements Callback<ItemMode
             }
         });
 
+
+        // Inflate the layout for this fragment
+//        AdView mAdView = (AdView) rootView.findViewById(R.id.adView1);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
+//
+//        WebView webView2= (WebView) rootView.findViewById(R.id.webView2);
+//        webView2.loadUrl("http://www.dsebd.org/mkt_depth_3.php");
+//        webView2.getSettings().setJavaScriptEnabled(true);
+//        webView2.setWebViewClient(new WebViewClient());
+
+
+
+
+        return rootView;
+
+
     }
 
     private void apiCall(Retrofit retrofit) {
@@ -79,17 +106,18 @@ public class MainActivity extends AppCompatActivity implements Callback<ItemMode
         Call<ItemModel> call = myApi.getShout();
         call.enqueue(this);
     }
+
     @Override
     public void onResponse(Call<ItemModel> call, Response<ItemModel> response) {
         ItemModel itemModel = response.body();
         FeedAdapter adapter = new FeedAdapter(itemModel);
         mRecyclerView.setAdapter(adapter);
         swipeRefreshLayout.setRefreshing(false);
+
     }
 
     @Override
     public void onFailure(Call<ItemModel> call, Throwable t) {
-        Toast.makeText(getApplicationContext(),"boom !",Toast.LENGTH_LONG).show();
 
     }
 }

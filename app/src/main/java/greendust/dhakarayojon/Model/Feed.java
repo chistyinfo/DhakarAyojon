@@ -1,4 +1,4 @@
-package greendust.retrofitwithjaso.Model;
+package greendust.dhakarayojon.Model;
 
 /**
  * Created by Joker on 7/24/16.

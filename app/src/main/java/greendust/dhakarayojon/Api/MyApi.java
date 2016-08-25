@@ -1,7 +1,7 @@
-package greendust.retrofitwithjaso.Api;
+package greendust.dhakarayojon.Api;
 
 
-import greendust.retrofitwithjaso.Model.ItemModel;
+import greendust.dhakarayojon.Model.ItemModel;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

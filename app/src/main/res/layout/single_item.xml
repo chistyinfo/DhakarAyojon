@@ -45,6 +45,7 @@
                     android:id="@+id/tvData"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily=""
                     android:textSize="@dimen/feed_item_profile_name"
                     android:textStyle="bold" />
 
