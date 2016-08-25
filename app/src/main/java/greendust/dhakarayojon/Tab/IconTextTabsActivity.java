@@ -105,8 +105,8 @@ public class IconTextTabsActivity extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
-        builder.setMessage("Do you want to Exit?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setMessage("বাহির হতে চাচ্ছেন?");
+        builder.setPositiveButton("হ্যাঁ", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -114,7 +114,7 @@ public class IconTextTabsActivity extends AppCompatActivity {
 
             }
         });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("না", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //if user select "No", just cancel this dialog and continue with app

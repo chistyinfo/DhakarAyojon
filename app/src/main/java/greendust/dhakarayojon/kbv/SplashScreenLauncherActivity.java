@@ -138,6 +138,7 @@ public class SplashScreenLauncherActivity extends Activity {
 				super.onPostExecute(result);
 					Intent intent = new Intent(SplashScreenLauncherActivity.this, IconTextTabsActivity.class);
 					startActivity(intent);
+					finish();
 
 
 
