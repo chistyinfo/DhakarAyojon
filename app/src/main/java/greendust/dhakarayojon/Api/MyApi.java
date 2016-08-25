@@ -10,6 +10,6 @@ import retrofit2.http.GET;
  * Created by Joker on 7/24/16.
  */
 public interface MyApi {
-    @GET("mu.json")
+    @GET("da.json")
     Call<ItemModel> getShout();
 }

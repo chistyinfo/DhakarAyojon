@@ -7,8 +7,8 @@ import retrofit2.http.GET;
 /**
  * Created by chisty on 8/25/2016.
  */
-public interface MusicApi {
-
-    @GET("mu.json")
+public interface BusinessApi {
+    @GET("bu.json")
     Call<ItemModel> getShout();
+
 }
