@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import greendust.dhakarayojon.Adapter.FeedAdapter;
+import greendust.dhakarayojon.Adapter.CalturalAdapter;
 import greendust.dhakarayojon.Api.MyApi;
 import greendust.dhakarayojon.Model.ItemModel;
 import greendust.dhakarayojon.R;
@@ -32,7 +32,7 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
     SwipeRefreshLayout swipeRefreshLayout;
     Retrofit retrofit;
 
-    String API = "http://api.androidhive.info/feed/";
+    String API = "http://www.padmafire.com/chistyinfo/dhakaayojon/";
 
 
 
@@ -110,7 +110,7 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
     @Override
     public void onResponse(Call<ItemModel> call, Response<ItemModel> response) {
         ItemModel itemModel = response.body();
-        FeedAdapter adapter = new FeedAdapter(itemModel);
+        CalturalAdapter adapter = new CalturalAdapter(itemModel);
         mRecyclerView.setAdapter(adapter);
         swipeRefreshLayout.setRefreshing(false);
 
