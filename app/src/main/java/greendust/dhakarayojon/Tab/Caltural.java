@@ -1,7 +1,5 @@
 package greendust.dhakarayojon.Tab;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -11,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -32,6 +33,7 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
     SwipeRefreshLayout swipeRefreshLayout;
+    private InterstitialAd mInterstitialAd;
     Retrofit retrofit;
 
     String API = "http://www.padmafire.com/chistyinfo/dhakaayojon/";
@@ -51,6 +53,17 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
 
 
         View rootView = inflater.inflate(R.layout.fragment_caltural, container, false);
+
+        mInterstitialAd = new InterstitialAd(getContext());
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                start();
+
+            }
+        });
+        requestNewInterstitial();
 
         swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefresh1);
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -73,6 +86,7 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
         mRecyclerView.setAdapter(mAdapter);
 
             apiCall(retrofit);
+
 
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
@@ -97,12 +111,17 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
 
     }
 
+    private void requestNewInterstitial() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("SEE_YOUR_LOGCAT_TO_GET_YOUR_DEVICE_ID")
+                .build();
 
-    public void dialNumber(String number){
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +number));
-        startActivity(intent);
+                mInterstitialAd.loadAd(adRequest);
     }
 
+    private void start() {
+        mInterstitialAd.show();
+    }
 
 
     private void apiCall(Retrofit retrofit) {
@@ -122,6 +141,7 @@ public class Caltural extends Fragment implements Callback<ItemModel> {
         CalturalAdapter adapter = new CalturalAdapter(itemModel);
         mRecyclerView.setAdapter(adapter);
         swipeRefreshLayout.setRefreshing(false);
+        start();
 
     }
 
