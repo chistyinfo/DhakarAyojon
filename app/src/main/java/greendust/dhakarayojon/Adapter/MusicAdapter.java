@@ -29,7 +29,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
         public ImageView image;
         public TextView txtStatus,venu,cont;
         //        public ImageView proPic;
-        public TextView url;
+//        public TextView url;
         public TextView timed;
 
         public ViewHolder(View v) {
@@ -41,7 +41,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
             cont= (TextView) v.findViewById(R.id.cont);
             txtStatus = (TextView)v.findViewById(R.id.txtStatusMsg);
 //            proPic = (ImageView)v.findViewById(R.id.profilePic);
-            url = (TextView)v.findViewById(R.id.txtUrl);
+//            url = (TextView)v.findViewById(R.id.txtUrl);
         }
     }
 
@@ -68,7 +68,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
         Picasso.with(holder.image.getContext()).load(getItem(position).getImage()).into(holder.image);
         holder.txtStatus.setText(getItem(position).getStatus());
 //        Picasso.with(holder.image.getContext()).load(getItem(position).getProfilePic()).into(holder.proPic);
-        holder.url.setText(getItem(position).getUrl());
+//        holder.url.setText(getItem(position).getUrl());
 
     }
 

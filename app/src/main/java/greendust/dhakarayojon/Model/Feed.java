@@ -12,14 +12,6 @@ public class Feed {
         this.id = id;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -68,5 +60,5 @@ public class Feed {
     }
 
     private int id;
-    private String name,image,status,url,timed,venu,cont;
+    private String name,image,status,timed,venu,cont;
 }

@@ -40,12 +40,13 @@
             android:layout_height="match_parent"
             app:tabMode="fixed"
             android:elevation="16dp"
+            android:background="@color/cardview_dark_background"
             app:tabGravity="fill"  />
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"  />

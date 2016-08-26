@@ -55,7 +55,7 @@ public class IconTextTabsActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.logo);
+//        getSupportActionBar().setIcon(R.drawable.logo);
 
 
         AdView nAdView = (AdView) findViewById(R.id.adView);

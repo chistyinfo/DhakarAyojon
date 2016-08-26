@@ -12,7 +12,7 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/feed_item_margin"
         android:layout_marginRight="@dimen/feed_item_margin"
@@ -36,7 +36,7 @@
 
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/feed_item_profile_info_padd" >
@@ -45,8 +45,7 @@
                     android:id="@+id/tvData"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily=""
-                    android:textSize="@dimen/feed_item_profile_name"
+                    android:textSize="@dimen/hedline"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -60,14 +59,14 @@
             android:paddingRight="@dimen/feed_item_status_pad_left_right"
             android:paddingTop="@dimen/feed_item_status_pad_top" />
 
-        <TextView
-            android:id="@+id/txtUrl"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:linksClickable="true"
-            android:paddingLeft="@dimen/feed_item_status_pad_left_right"
-            android:paddingRight="@dimen/feed_item_status_pad_left_right"
-            android:textColorLink="@color/link" />
+        <!--<TextView-->
+            <!--android:id="@+id/txtUrl"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:linksClickable="true"-->
+            <!--android:paddingLeft="@dimen/feed_item_status_pad_left_right"-->
+            <!--android:paddingRight="@dimen/feed_item_status_pad_left_right"-->
+            <!--android:textColorLink="@color/link" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,12 +80,12 @@
                 android:layout_weight="2"
                 android:text="তারিখ"
                 android:textSize="16sp"
-                android:gravity="end"
+                android:gravity="left"
                 android:textColor="@color/link"
                 android:visibility="visible"/>
             <TextView
                 android:id="@+id/timed"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingLeft="@dimen/feed_item_status_pad_left_right"
@@ -107,7 +106,7 @@
                 android:layout_weight="2"
                 android:text="স্থান"
                 android:textSize="16sp"
-                android:gravity="end"
+                android:gravity="left"
                 android:textColor="@color/link"
                 android:visibility="visible"/>
             <TextView
@@ -133,7 +132,7 @@
                 android:layout_weight="2"
                 android:text="ফোন"
                 android:textSize="16sp"
-                android:gravity="end"
+                android:gravity="left"
                 android:textColor="@color/link"
                 android:visibility="visible"/>
             <TextView
