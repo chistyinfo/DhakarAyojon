@@ -65,7 +65,7 @@ public class SplashScreenLauncherActivity extends Activity {
 	 * */
 	private void setAnimation(String category) {
 		if (category.equals(SPLASH_SCREEN_OPTION_1)) {
-			mKenBurns.setImageResource(R.drawable.background_media);
+			mKenBurns.setImageResource(R.drawable.fireworks);
 			animation1();
 
 		} else if (category.equals(SPLASH_SCREEN_OPTION_3)) {

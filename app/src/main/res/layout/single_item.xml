@@ -39,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginBottom="5dp"
                 android:paddingLeft="@dimen/feed_item_profile_info_padd" >
 
                 <greendust.dhakarayojon.font.RobotoTextView
